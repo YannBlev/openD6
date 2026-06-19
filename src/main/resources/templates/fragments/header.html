@@ -1,0 +1,23 @@
+<header xmlns:sec="http://www.w3.org/1999/xhtml">
+	<div class="topnav" id="myTopnav">
+		<a href="/" class="active">OpenD6</a>
+		<a th:href="@{/openD6/games}" sec:authorize="isAuthenticated()">Games</a>
+		<a th:href="@{/openD6/characters}">Characters</a>
+		<a th:href="@{/openD6/attributes}">Attributes</a>
+		<a th:href="@{/openD6/capacities}">Capacities</a>
+		<a th:href="@{/openD6/css}">CSS</a>
+		<div class="dropdown">
+			<button class="dropbtn">My space
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content right">
+				<a th:href="@{/openD6/login}" sec:authorize="!isAuthenticated()">Login</a>
+				<a th:href="@{#}" sec:authorize="!isAuthenticated()">Create a account</a>
+				<form class="form" th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()">
+				    <button type="submit">Logout</button>
+				</form>
+			</div>
+		</div> 
+		<a style="font-size:15px;" class="icon" onclick="burgerFunction()">&#9776;</a>
+	</div>
+</header>

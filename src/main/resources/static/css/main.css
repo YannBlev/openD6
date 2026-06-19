@@ -1,0 +1,689 @@
+body {
+	font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+	margin: 0;
+	}
+	
+main {
+	display:flex;
+	flex-direction: column;
+}
+
+section article {
+	margin:20px;
+}
+
+.right {right:0}
+
+.center {
+	align-items: center;
+	justify-content: center;
+}
+
+/* ********************* *
+ *    DEBUT BG COLOR   *
+ * ********************* */
+
+.dark {
+	color: white;
+	background: var(--primary-bg-color);
+}
+
+.dark:hover {
+	background: var(--second-bg-color);
+}
+
+.orange {
+	color: white;
+	background: var(--primary-color);
+}
+
+.orange:hover {
+	background: var(--second-color);
+}
+
+.red {
+	color: white;
+	background: var(--red-primary-color);
+}
+
+.red:hover {
+	background: var(--red-second-color);
+}
+
+
+/* ------- FIN BG COLOR ------- */
+
+/* ********************* *
+ *    DEBUT CONTAINERS   *
+ * ********************* */
+
+.none {
+	display:none;
+}
+
+.flex {
+	display:flex;
+}
+
+.block {
+	display:bloc;
+}
+ 
+ .ctn-wrap {
+ 	display:flex;
+	flex-wrap: wrap;
+ }
+
+.container {
+	width:max-content;
+	border-radius:20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: #f2f2f2;
+	padding: 20px;
+} 
+
+/* ------- FIN CONTAINERS ------- */ 
+
+/* ******************* *
+ *    DEBUT MESSAGES   *
+ * ******************* */
+
+.danger {
+	background-color: #ffdddd;
+	border-left: 6px solid #f44336;
+	margin-bottom: 15px;
+	padding: 10px 50px 10px 10px;
+}
+
+.warning {
+	background-color: #ffffcc;
+	border-left: 6px solid #ffeb3b;
+	margin-bottom: 15px;
+	padding: 10px 50px 10px 10px;
+}
+
+.info {
+	background-color: #ccffff;
+	border-left: 6px solid #3bffff;
+	margin-bottom: 15px;
+	padding: 10px 50px 10px 10px;
+}
+
+/* ------- FIN MESSAGES ------- */
+
+
+/* ****************** *
+ *    DEBUT TABLE     *
+ * ****************** */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+	background: #ffffff;
+	background: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, rgba(43, 43, 43, 1) 25%);
+
+}
+
+th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: var(--primary-bg-color);
+	color: white;border-radius: 35px 5px 35px 0;
+	padding-left: 35px;
+}
+
+td {
+	padding: 8px;
+}
+
+tbody tr:nth-child(even){background-color: #f2f2f2;}
+
+tbody tr:hover {background-color: #ddd;}
+
+/* ------- FIN TABLE ------- */
+
+
+/* ****************** *
+ *    DEBUT BUTTON     *
+ * ****************** */
+
+.btn {
+	cursor:pointer;
+	border:none;
+	text-decoration: none;
+	font-size:larger;
+	color: white;
+	padding: 10px 20px;
+	background: var(--primary-color);
+	border-radius: 35px 5px 35px 5px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+	transition: border-radius 0.25s, background 0.5s;
+	width: fit-content;
+}
+
+.btn:hover {
+	background: var(--second-color);
+	border-radius: 35px 10px 35px 10px;
+}
+
+.btn:active {
+	transform: translateY(3px);
+	box-shadow: rgba(0, 0, 0, 0.4) 0 0 0, rgba(0, 0, 0, 0.3) 0 0 0 0, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}
+
+.btn-roll {
+	cursor:pointer;
+	border:none;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+	transition: border-radius 0.25s, background 0.5s;
+	width: fit-content;
+}
+
+.btn-roll:active {
+	transform: translateY(3px);
+	box-shadow: rgba(0, 0, 0, 0.4) 0 0 0, rgba(0, 0, 0, 0.3) 0 0 0 0, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}
+
+
+/* ------- FIN BUTTON ------- */
+
+
+/* ****************** *
+ *    DEBUT SELECT     *
+ * ****************** */
+
+.select {
+	cursor:pointer;
+	border:none;
+	text-decoration: none;
+	font-size:smaller;
+	color: white;
+	padding: 10px 20px;
+	background: var(--primary-bg-color);
+	border-radius: 30px 30px 10px 10px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+	transition: border-radius 0.25s, background 0.5s;
+	width: fit-content;
+}
+
+.select:hover, .select:focus {
+	border-radius: 25px 25px 10px 10px;
+}
+
+.select:active {
+	transform: translateY(3px);
+	box-shadow: rgba(0, 0, 0, 0.4) 0 0 0, rgba(0, 0, 0, 0.3) 0 0 0 0, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}
+
+/* ------- FIN SELECT ------- */
+
+
+/* ****************** *
+ *    DEBUT INPUT     *
+ * ****************** */
+
+ 
+.input {
+	border:none;
+	text-decoration: none;
+	font-size:smaller;
+	color: white;
+	padding: 10px 20px;
+	background: var(--primary-bg-color);
+	border-radius:5px;
+	transition: border-radius 0.25s, font-size 0.1s;
+}
+
+.input:hover{
+
+}
+ 
+.input:active, .input:focus{
+	outline: none;
+}
+
+ 
+ /* ------- FIN INPUT ------- */
+ 
+
+/* ****************** *
+ *    DEBUT FORM     *
+ * ****************** */
+
+form {
+	display:flex;
+	flex-direction: column;
+}
+
+.form input[type=text],.form input[type=password],.form textarea {
+	border:none;
+	text-decoration: none;
+	font-size:smaller;
+	color: white;
+	padding: 10px 20px;
+	background: var(--primary-bg-color);
+	border-radius:5px;
+	transition: border-radius 0.25s, font-size 0.1s;
+}
+
+.form textarea {
+	width:500px;
+	height: 100px;
+}
+
+.form input[type=text]:active,.form input[type=password]:active,.form textarea:active,.form input[type=text]:focus,.form input[type=password]:focus,.form textarea:focus {
+	outline: none;
+}
+
+.form input[type=submit] {
+	cursor:pointer;
+	border:none;
+	text-decoration: none;
+	font-size:larger;
+	color: white;
+	padding: 10px 20px;
+	background: var(--primary-color);
+	border-radius: 35px 5px 35px 5px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+	transition: border-radius 0.25s, background 0.5s;
+	width: fit-content;
+}
+
+.form input[type=submit]:hover {
+	background: var(--second-color);
+	border-radius: 35px 10px 35px 10px;
+}
+
+.form input[type=submit]:active {
+	transform: translateY(3px);
+	box-shadow: rgba(0, 0, 0, 0.4) 0 0 0, rgba(0, 0, 0, 0.3) 0 0 0 0, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}
+ 
+.form select {
+	cursor:pointer;
+	border:none;
+	text-decoration: none;
+	font-size:smaller;
+	color: white;
+	padding: 10px 20px;
+	background: var(--primary-bg-color);
+	border-radius: 30px 30px 10px 10px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+	transition: border-radius 0.25s, background 0.5s;
+	width: fit-content;
+}
+
+.form select:hover, .form select:focus {
+	border-radius: 25px 25px 10px 10px;
+}
+
+.form select:active {
+	transform: translateY(3px);
+	box-shadow: rgba(0, 0, 0, 0.4) 0 0 0, rgba(0, 0, 0, 0.3) 0 0 0 0, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+}
+
+.form label, .form input {
+	margin:10px;
+}
+
+ /* ------- FIN FORM ------- */
+ 
+
+	/* ****************** *
+	 *    DEBUT <H>       *
+	 * ****************** */
+	 
+ h1 {
+ 	margin-top: 0;
+ 	cursor:default;
+	border-bottom: 5px solid gray;
+	border-radius: 0;
+	background-color: var(--primary-bg-color);
+	color: white;
+	padding: 2px 0 2px 20px;
+	border-top: 5px solid black;
+ }
+ 
+ h2 {
+ 	border-radius:25px;
+ 	text-align:center;
+ 	margin-top: 0;
+ 	cursor:default;
+	border-bottom: 5px solid gray;
+	background-color: var(--primary-bg-color);
+	color: white;
+	border-top: 5px solid black;
+	width: 60%;
+	margin:20px;
+ }
+ 
+ 
+ 
+   /* ------- FIN <H> ------- */
+   
+
+	/* ****************** *
+	 *    DEBUT CARDS     *
+	 * ****************** */
+   
+div.card {
+	border-radius:10%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 200px;
+	height: 200px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background: white;
+	flex-direction: column;
+}
+
+.logoUniverse {
+	position:absolute;
+	bottom: 20px;
+	right: 70px;
+	font-size:larger;
+	color:silver;
+}
+
+.libellesGame {
+	width: 80%;
+	cursor:default;
+	color: silver;
+	margin: 20px;
+	font-size: larger;
+	display: flex;
+	flex-direction:column;
+	justify-content: space-between;
+	font-weight: bolder;
+}
+
+.libellesGame > div:first-child {
+	color:var(--primary-bg-color);
+	position:relative;
+}
+
+.libellesGame > div:first-child > span:first-child {
+	white-space: nowrap; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+}
+
+.libellesGame > div:first-child > span:not(:first-child) {
+	color:silver;
+	position:absolute;
+	bottom: 15px;
+	right: 0;
+}
+
+.libellesGame > div:not(:first-child) {
+	display: flex;
+}
+
+.libellesGame > div:not(:first-child) > span:not(:last-child) {
+	margin-top:10px;
+	background: var(--second-color);
+	width: 45px;
+	height: 35px;
+	border-radius: 5px 0 0 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color:white;
+	font-size:14px;
+}
+
+.libellesGame > div:not(:first-child) > span:not(:first-child) {
+	margin-top:10px;
+	width: 100%;
+	background: var(--primary-bg-color);
+	border-radius: 0 5px 5px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color:white;
+	font-size:14px;
+}
+
+.ctnPswCard i {
+	color:white;
+}
+
+.ctnPswCard {
+	display: flex;
+}
+
+.ctnPswCard span {
+	background: var(--second-color);
+	width: 35px;
+	border-radius: 5px 0 0 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ctnPswCard input[type=password] {
+	width: 100px;
+	border-radius: 0 5px 5px 0;
+}
+
+.ctnBtnCard {
+	position: relative;
+	left: 105px;
+	bottom: 25px;
+}
+
+.ctnBtnCard:active {
+	bottom: 23px;
+}
+
+   /* ------- FIN CARDS ------- */
+
+	/* ******************** *
+	 *  DEBUT LIST-PLAYERS  *
+	 * ******************** */
+
+.ctnPlayer {
+	display: flex;
+	margin-bottom: 5px;
+	color:white;
+}
+
+.ctnPlayer div:first-child {
+	background: var(--second-color);
+	width: 35px;
+	border-radius: 5px 0 0 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ctnPlayer input[type=text] {
+	width: 100px;
+	border-radius: 0;
+}
+
+.ctnPlayer div:last-child input{
+	border-radius: 0 5px 5px 0
+}
+
+.ctnPlayer div:last-child button {
+	text-decoration: none;
+	color:white;
+	cursor: pointer;
+	border-radius: 0 5px 5px 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	border: none;
+}
+
+.ctnPlayer div:last-child form {
+	height: 100%;
+}
+	/* ------- FIN LIST-PLAYERS ------- */
+	
+	/* *********************** *
+	 *  DEBUT VIGNETTES  *
+	 * *********************** */
+
+.a-card {
+	width: max-content;
+	border-radius: 30px 10px 10px 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: #f2f2f2;
+	margin:15px;
+}
+
+
+.libelle-a-card {
+	background: var(--primary-color);
+	margin: 0;
+	padding: 0;
+	border-radius: 30px 10px 0 0;
+	display: flex;
+	color: white;
+	justify-content: space-between;
+}
+
+
+.name-a-card {
+	font-size: x-large;
+	font-weight: bolder;
+	padding:5px 30px 1px 15px;
+	text-align: left;
+	background-color: var(--primary-bg-color);
+	border-radius: 35px 5px 35px 0;
+}
+
+.skills-a-card {
+	display:flex;
+	flex-direction:column;
+}
+
+.skill-a-card {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.pip-a-card {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-right: 10px;
+}
+
+.pip-a-card span {
+	width:2.5em;
+}
+
+.pip-a-card input{
+	margin-right: 10px
+}
+
+.name-s-a-card {
+	margin-left:10px;
+}
+
+	/* ------- FIN VIGNETTES ------- */
+	
+	/* *********************** *
+	 *	  	DEBUT MODALS	   *
+	 * *********************** */
+	
+/* Fond de la modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal visible */
+.modal.open {
+    display: flex;
+}
+
+/* Contenu */
+.modal-content {
+    position: relative;
+
+    width: 80%;
+    max-width: 500px;
+
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        0 6px 20px rgba(0, 0, 0, 0.19);
+
+    animation: modal-slide-down 0.3s ease-out;
+}
+
+/* Animation */
+@keyframes modal-slide-down {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Bouton fermeture */
+.close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ddd;
+}
+
+.modal-header,
+.modal-footer {
+    padding: 12px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 20px 16px;
+    text-align: center;
+}
+
+#diceResult {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}

@@ -1,0 +1,27 @@
+<html lang="en" layout:decorate="~{layouts/layoutMain}" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+
+<main layout:fragment="content">
+    <h1>NewGame</h1>
+    <section class="center">
+		<div class="container">
+			<form class="form" th:action="@{/openD6/games/new}" th:object="${game}" method="POST">
+				<label for="name">Name of the game</label>
+				<input type="text" id="name" name="name" th:field="*{name}" placeholder="Name of your game...">
+				
+				<label for="universe">Universe</label>
+				<select id="universe" name="universe" th:field="*{universe}">
+					<option th:each="u : ${universes}" th:value="${u.id}" th:text="${u.name}"></option>
+				</select>
+				
+				<label for="summary">Summary</label>
+				<textarea id="summary" name="summary" th:field="*{summary}" placeholder="Summary of your game..."></textarea>
+				
+			<input type="submit" value="Submit">
+			</form>
+		</div>
+	</section>
+</main>
+
+
+</html>

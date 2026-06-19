@@ -1,0 +1,33 @@
+<html lang="en" layout:decorate="~{layouts/layoutMain}" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+
+<main layout:fragment="content">
+
+    <h1><span th:text="${character.name}"></span></h1>
+  	<div class="ctn-wrap">
+	<div class="a-card" th:each="a : ${character.attributes}">
+	    <div class="libelle-a-card">
+	        <div>
+	        	<span th:each="attr : ${attributes}" th:if="${attr.id == a.attributeId}" th:text="${attr.name}" class="name-a-card"></span>
+	            <!-- <span class="name-a-card" th:text="|${a.attributeId}|"></span>  -->
+	        </div>
+	        <div class="pip-a-card">
+		        <span th:text="|${a.pipValue}|"></span>
+	        </div>
+	    </div>
+	    <div class="skills-a-card" th:each="s : ${a.skills}">
+	        <div class="skill-a-card">
+	        	<div class="name-s-a-card">
+	        		<span th:each="skill : ${skills}" th:if="${skill.id == s.skillId}" th:text="${skill.name}"></span>
+	            	<!--<span th:text="${s.skillId}"></span>-->
+	            </div>
+	            <div class="pip-a-card">
+		            <span th:text="${s.pipValue}"></span>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	</div>
+	<script src="/js/detailCharacter.js"></script>
+</main>
+</html>

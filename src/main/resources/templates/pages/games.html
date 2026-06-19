@@ -1,0 +1,33 @@
+<html lang="en" layout:decorate="~{layouts/layoutMain}" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+
+<main layout:fragment="content">
+    <h1>Games</h1>
+    <section class="flex">
+	    <article>
+			<div class="card">
+				<a th:href="@{/openD6/games/new}" class="btn"><i class="fa-solid fa-plus"></i>New</a>
+			</div>
+		</article>
+	    <article th:each="game : ${games}" th:if="${game.GameMaster.pseudo.equals(#authentication.name) or #lists.contains(game.players, player)}">
+			<div class="card">
+				<div style="position:relative;">
+			    	<div class="logoUniverse">
+						<span th:if="${game.universe.id == 1}"><i class="fa-solid fa-dragon"></i></span>
+						<span th:if="${game.universe.id == 2}"><i class="fa-regular fa-compass"></i></span>
+						<span th:if="${game.universe.id == 3}"><i class="fa-solid fa-rocket"></i></span>
+					</div>	
+				</div>
+				<div class="libellesGame">
+					<div><span th:text="${game.name}"></span><span><i class="fa-solid fa-circle-info"></i></span></div>
+					<div><span><i class="fa-solid fa-crown"></i></span><span th:text="${game.gameMaster.pseudo}"></span></div>
+				</div>
+			</div>
+			<div class="ctnBtnCard">
+				<a th:href="@{|/openD6/games/${game.id}|}" class="btn">Join<i class="fa-solid fa-arrow-turn-up"></i></a>
+			</div>
+		</article>
+    </section>
+    
+</main>
+</html>

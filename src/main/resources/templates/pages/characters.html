@@ -1,0 +1,29 @@
+<html lang="en" layout:decorate="~{layouts/layoutMain}" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+
+<main layout:fragment="content">
+
+    <h1>Characters</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>player</th>
+				<th>Game</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="c : ${characters}">
+				<td th:text="${c.id}"></td>
+				<td th:text="${c.name}"></td>
+				<td th:text="${c.player.pseudo}"></td>
+				<td th:text="${c.game.name}"></td>
+				<td><a th:href="@{|/openD6/characters/${c.id}|}" target="_blank">See more <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+			</tr>
+		</tbody>
+	</table>
+
+</main>
+</html>

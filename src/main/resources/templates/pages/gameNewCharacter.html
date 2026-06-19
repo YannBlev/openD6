@@ -1,0 +1,51 @@
+<html lang="en" layout:decorate="~{layouts/layoutMain}" xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<main layout:fragment="content">
+    <h1 th:text="|${game.name} : New Character|"></h1>
+    <!-- CREATE A CHARACTER -->
+    <section>
+        <article>
+            <!-- PIPS STOCK -->
+            <article class="info">
+                <span>54 pips (18D) to allocate among the Attributes.A minimum of 3 pips (1D) and a maximum of 15 pips (5D) per Attribute.</span>
+            </article>
+            <article class="info">
+                <span>21 pips (7D) to allocate among all Skills. A maximum of 15 pips (3D) for a single Skill.</span>
+            </article>
+            <article>
+                <span id="pipAttributeStock">54</span>
+                <span> pip's Attribute left.</span>
+            </article>
+            <article>
+                <span id="pipSkillStock">21</span>
+                <span> pip's Skill left.</span>
+            </article>
+        </article>
+    </section>
+
+	<!-- FORM DYNAMIC WITH DTO -->
+	<form method="post" th:action="@{|/openD6/games/${game.id}/newCharacter|}" th:object="${characterForm}">
+    	<input type="text" class="input" th:field="*{characterName}" placeholder="Character's name">
+    	<div class="ctn-wrap">
+    	<div class="a-card" th:each="attr, attrStat : *{attributes}">
+    		<div class="libelle-a-card">
+    		<div><span class="name-a-card" th:text="${game.universe.attributes[attrStat.index].name}"></span></div>
+	    	<div class="pip-a-card"><input type="range" min="3" max="15" th:field="*{attributes[__${attrStat.index}__].pipValue}"><span th:id="|diceAttr*{attributes[__${attrStat.index}__].attributeId}|"></span></div>
+			<input type="hidden" th:field="*{attributes[__${attrStat.index}__].attributeId}">
+			</div>
+			<div class="skills-a-card">
+			<div class="skill-a-card" th:each="skill, skillStat : ${attr.skills}">
+				<div class="name-s-a-card"><span th:text="${game.universe.attributes[__${attrStat.index}__].skills[__${skillStat.index}__].name}"></span></div>
+				<div class="pip-a-card"><input type="range" min="0" max="15" th:field="*{attributes[__${attrStat.index}__].skills[__${skillStat.index}__].pipValue}"><span th:id="*{attributes[__${attrStat.index}__].skills[__${skillStat.index}__].skillId}"></span></div>
+				<input type="hidden" th:field="*{attributes[__${attrStat.index}__].skills[__${skillStat.index}__].skillId}">
+			</div>
+			</div>
+		</div>
+		</div>
+    	<input type="submit" class="btn" value="Submit">
+    </form>
+    <script src="/js/createCharacter.js"></script>
+</main>
+
+</html>

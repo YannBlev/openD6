@@ -1,0 +1,28 @@
+  	<section th:fragment="modal(character, attributes, skills)">
+  	<div class="ctn-wrap">
+	<div class="a-card" th:each="a : ${character.attributes}">
+	    <div class="libelle-a-card">
+	        <div>
+	        	<span th:each="attr : ${attributes}" th:if="${attr.id == a.attributeId}" th:text="${attr.name}" class="name-a-card"></span>
+	        </div>
+	        <div class="pip-a-card">
+		        <span th:text="|${a.pipValue}|"></span>
+		        <button class="btn-roll dark"><i class="fa-solid fa-dice"></i></button>
+	        </div>
+	    </div>
+	    <div class="skills-a-card" th:each="s : ${a.skills}">
+	        <div class="skill-a-card">
+	        	<div class="name-s-a-card">
+	        		<span th:each="skill : ${skills}" th:if="${skill.id == s.skillId}" th:text="${skill.name}"></span>
+	            </div>
+	            <div class="pip-a-card">
+		            <span th:text="${s.pipValue}"></span>
+		            <button class="btn-roll orange"><i class="fa-solid fa-dice"></i></button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	</div>
+	<script src="/js/rollDice.js"></script>
+	<script src="/js/detailCharacter.js"></script>
+	</section>

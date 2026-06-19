@@ -1,0 +1,22 @@
+<section th:fragment="modal(game)" style="flex-direction: column">
+    <article th:if="${#authentication.name.equals(game.gameMaster.pseudo)}">
+        <form class="form" method="post" th:action="@{|/openD6/games/${game.id}/newPlayer|}" style="flex-direction: inherit">
+            <input type="text" placeholder="Username" name="username">
+            <input type="submit" value="add Player">
+        </form>
+    </article>
+    <article>
+        <div class="ctnPlayer">
+            <div><i class="fa-solid fa-crown"></i></div><div><input type="text" th:value="${game.gameMaster.pseudo}" class="input" disabled></div>
+        </div>
+        <div th:each="p : ${game.players}" class="ctnPlayer">
+            <div><i class="fa-solid fa-user"></i></div>
+            <div><input type="text" th:value="${p.pseudo}" class="input" disabled></div>
+            <div th:if="${#authentication.name.equals(game.gameMaster.pseudo)}">
+                <form class="form" th:action="@{|./${game.id}/deletePlayer|}" method="post">
+                    <button type="submit" name="idPlayer" th:value="${p.id}" class="red"><i class="fa-solid fa-xmark"></i></button>
+                </form>
+            </div>
+        </div>
+    </article>
+</section>

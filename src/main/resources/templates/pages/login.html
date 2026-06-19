@@ -1,0 +1,29 @@
+<html lang="en" layout:decorate="~{layouts/layoutMain}" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+
+<main layout:fragment="content">
+		<h1>Login</h1>
+	<section>
+		<article class="danger" th:if="${param.error}">
+			Invalid username and password.
+		</article>
+		<article th:if="${param.logout}">
+			You have been logged out.
+		</article>
+	</section>
+	<section class="center flex">
+		<div class="container">
+			<form th:action="@{/openD6/login}" class="form center" method="post">
+				<div>
+				<input type="text" name="username" placeholder="Username" autofocus/>
+				</div>
+				<div>
+				<input type="password" name="password" placeholder="Password"/>
+				</div>
+				<input type="submit" value="Log in" />
+			</form>
+		</div>
+	</section>
+</main>
+
+</html>

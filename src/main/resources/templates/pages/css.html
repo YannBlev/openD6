@@ -1,0 +1,178 @@
+<html lang="en" layout:decorate="~{layouts/layoutMain}" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+
+<main layout:fragment="content">
+
+    <h1>CSS</h1>
+    <!-- --- BUTTON  & LINK --- -->
+    <h2>button & link</h2>
+    <h3>class="btn"</h3>
+    <a href="#" class="btn">Button(link)</a>
+    <button class="btn" type="button">Button(button)</button>
+    <input type="submit" class="btn" value="Button(inputSubmit)">
+    <input type="button" class="btn" value="Button(inputButton)">
+    <h3>class="btn-roll"</h3>
+    <button class="btn-roll">roll</button>
+    <span class="btn-roll">roll</span>
+    
+    <h2>select</h2>
+    <h3>class="select"</h3>
+    <select class="select">
+	   <option value="0">Select car:</option>
+	   <option value="1">Audi</option>
+	   <option value="2">BMW</option>
+	   <option value="3">Citroen</option>
+    </select>
+    
+    <h2>input, textarea</h2>
+    <h3>class="input"</h3>
+    <input type="text" placeholder="input type text" class="input">
+    <input type="password" placeholder="input type psw" class="input">
+    <textarea class="input" placeholder="textarea"></textarea>
+    
+    <h2>Input password</h2>
+    <h3>class="ctnPswCard"</h3>
+	<div class="ctnPswCard">
+		<span><i class="fa-solid fa-key"></i></span><input type="password" placeholder="Password..." class="input">
+	</div>
+    
+    <!-- --- FORM --- -->
+    <h2>form</h2>
+    <div class="container">
+	  <form class="form" action="#">
+	    <label for="fname">First Name</label>
+	    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+	
+	    <label for="lname">Last Name</label>
+	    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+	
+	    <label for="country">Country</label>
+	    <select id="country" name="country">
+	      <option value="australia">Australia</option>
+	      <option value="canada">Canada</option>
+	      <option value="usa">USA</option>
+	    </select>
+	
+	    <label for="subject">Subject</label>
+	    <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+	
+	    <input type="submit" value="Submit">
+	  </form>
+	</div>
+	
+	<!-- --- TABLE --- -->
+    <h2>table</h2>
+    <table>
+    <thead>
+	  <tr>
+	    <th>Company</th>
+	    <th>Contact</th>
+	    <th>Country</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+	    <td>Alfreds Futterkiste</td>
+	    <td>Maria Anders</td>
+	    <td>Germany</td>
+	  </tr>
+	  <tr>
+	    <td>Berglunds snabbköp</td>
+	    <td>Christina Berglund</td>
+	    <td>Sweden</td>
+	  </tr>
+	  <tr>
+	    <td>Centro comercial Moctezuma</td>
+	    <td>Francisco Chang</td>
+	    <td>Mexico</td>
+	  </tr>
+  </tbody>
+</table>
+
+<!-- VIGNETTES ATTRIBUTES & SKILLS  -->
+<h2>Vignette Skills</h2>
+<h3>Create a character</h3>
+<div class="a-card">
+    <div class="libelle-a-card">
+        <div>
+            <span class="name-a-card">Attribute</span>
+        </div>
+        <div class="pip-a-card">
+	        <input type="range" value="3" min="3" max="15">
+	        <span>0D</span>
+        </div>
+    </div>
+    <div class="skills-a-card">
+        <div class="skill-a-card">
+        	<div class="name-s-a-card">
+            	<span>Name_skill_1</span>
+            </div>
+            <div class="pip-a-card">
+	            <input type="range" value="0" min="0" max="15">
+	            <span>0D</span>
+            </div>
+        </div>
+        <div class="skill-a-card">
+        	<div class="name-s-a-card">
+            	<span>Name_skill_2</span>
+            </div>
+            <div class="pip-a-card">
+	            <input type="range" value="0" min="0" max="15">
+	            <span>0D</span>
+            </div>
+        </div>
+        <div class="skill-a-card">
+        	<div>
+            	<span class="name-s-a-card">Name_skill_3</span>
+            </div>
+            <div class="pip-a-card">
+	            <input type="range" value="0" min="0" max="15">
+	            <span>0D</span>
+            </div>
+        </div>
+    </div>
+</div>
+<h3>Roll a dice</h3>
+<div class="a-card">
+    <div class="libelle-a-card">
+        <div>
+            <span class="name-a-card">Attribute</span>
+        </div>
+        <div class="pip-a-card">
+	        <span>0D</span>
+	        <button class="btn-roll dark">roll<i class="fa-solid fa-dice"></i></button>
+        </div>
+    </div>
+    <div class="skills-a-card">
+        <div class="skill-a-card">
+        	<div class="name-s-a-card">
+            	<span>Name_skill_1</span>
+            </div>
+            <div class="pip-a-card">
+	            <span>0D</span>
+	            <button class="btn-roll orange">roll<i class="fa-solid fa-dice"></i></button>
+            </div>
+        </div>
+        <div class="skill-a-card">
+        	<div class="name-s-a-card">
+            	<span>Name_skill_2</span>
+            </div>
+            <div class="pip-a-card">
+	            <span>0D</span>
+	            <button class="btn-roll orange">roll<i class="fa-solid fa-dice"></i></button>
+            </div>
+        </div>
+        <div class="skill-a-card">
+        	<div>
+            	<span class="name-s-a-card">Name_skill_3</span>
+            </div>
+            <div class="pip-a-card">
+	            <span>0D</span>
+	            <button class="btn-roll orange">roll<i class="fa-solid fa-dice"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+</html>

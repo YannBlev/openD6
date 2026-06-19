@@ -1,0 +1,30 @@
+<html lang="en" layout:decorate="~{layouts/layoutMain}" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<main layout:fragment="content">
+    <h1 th:text="|Game : ${game.name}|"></h1>
+    <section th:if="${errorMessage}">
+        <article class="danger">
+            <span th:text="${errorMessage}"></span>
+        </article>
+    </section>
+    
+    <!-- LIST PLAYERS -->
+    <section th:replace="fragments/frg_players :: modal(${game})"></section>
+    
+    <!-- CREATE A CHARACTER -->
+    <section th:if="${!hasCharacter}">
+   		<article class="warning">You don't have a character yet. To play, you'll need to create one first.</article>
+    	<article>
+    		<a th:href="@{|/openD6/games/${game.id}/newCharacter|}" class="btn">Create Character</a>
+    	</article>
+	</section>
+	
+    <div th:if="${hasCharacter}">
+   	    <h2 th:text="|Character :  ${character.name}|"></h2>
+   		<!-- <article>Score : <span id="diceResult">0</span></article>  -->
+   		<article th:replace="fragments/frg_diceResult"></article>
+    	<section th:if="${hasCharacter}" th:replace="fragments/frg_character :: modal(${character}, ${attributes}, ${skills})"></section>
+    </div>
+</main>
+
+</html>
