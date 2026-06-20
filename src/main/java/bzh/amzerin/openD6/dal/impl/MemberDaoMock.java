@@ -80,11 +80,17 @@ public class MemberDaoMock implements MemberDao {
         members.removeIf(m -> m.getId() == id);
     }
 
-	@Override
-	public Member getMemberByPseudo(String pseudo) {
+    @Override
+    public Member getMemberByPseudo(String pseudo) {
+        if (pseudo == null) {
+            return null;
+        }
+
+        String normalized = pseudo.trim();
+
         return members.stream()
-                .filter(m -> m.getPseudo() == pseudo)
+                .filter(m -> normalized.equalsIgnoreCase(m.getPseudo()))
                 .findFirst()
                 .orElse(null);
-	}
+    }
 }

@@ -9,7 +9,7 @@
     </section>
     
     <!-- LIST PLAYERS -->
-    <section th:replace="fragments/frg_players :: modal(${game})"></section>
+    <section th:replace="~{fragments/frg_players :: modal(${game})}"></section>
     
     <!-- CREATE A CHARACTER -->
     <section th:if="${!hasCharacter}">
@@ -23,7 +23,7 @@
    	    <h2 th:text="|Character :  ${character.name}|"></h2>
    		<!-- <article>Score : <span id="diceResult">0</span></article>  -->
    		<article th:replace="fragments/frg_diceResult"></article>
-    	<section th:if="${hasCharacter}" th:replace="fragments/frg_character :: modal(${character}, ${attributes}, ${skills})"></section>
+    	<section th:if="${hasCharacter}" th:replace="~{fragments/frg_character :: modal(${character}, ${attributes}, ${skills})}"></section>
     </div>
 </main>
 

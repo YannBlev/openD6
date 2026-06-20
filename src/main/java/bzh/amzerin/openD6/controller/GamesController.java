@@ -140,9 +140,15 @@ public class GamesController {
 	
 
 	@PostMapping("/{id}/newPlayer")
-	public String postGameNewPlayer(@PathVariable("id") int id, @RequestParam("username") String username, RedirectAttributes redirectAttributes) {
+	public String postGameNewPlayer(
+	        @PathVariable("id") int id,
+	        @RequestParam("username") String username,
+	        RedirectAttributes redirectAttributes) {
+		System.out.println("****************************" + username + "********************************");
+		
 		Member player = memberService.getMemberByPseudo(username);
-
+		System.out.println("****************************" + player + "********************************");
+		
 		if (player == null) {
 			redirectAttributes.addFlashAttribute("errorMessage", "You have to enter a username");
 			return "redirect:/openD6/games/" + id;
@@ -159,9 +165,15 @@ public class GamesController {
 	
 
 	@PostMapping("/{idGame}/deletePlayer")
-	public String getDelete(@PathVariable("idGame") int idGame, int idPlayer) {
-		gameService.getGameById(idGame).getPlayers().remove(memberService.getMemberById(idPlayer));
-		return "redirect:/openD6/games/" + idGame;
+	public String getDelete(
+	        @PathVariable("idGame") int idGame,
+	        @RequestParam("idPlayer") int idPlayer) {
+
+	    gameService.getGameById(idGame)
+	               .getPlayers()
+	               .remove(memberService.getMemberById(idPlayer));
+
+	    return "redirect:/openD6/games/" + idGame;
 	}
 	
 	

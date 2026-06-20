@@ -27,7 +27,6 @@ public class MemberServiceMock implements MemberService {
 
     @Override
     public void createMember(Member member) {
-    	
         memberDao.createMember(member);
     }
 
