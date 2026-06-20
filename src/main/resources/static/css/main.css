@@ -50,6 +50,9 @@ section article {
 	background: var(--red-second-color);
 }
 
+.gainsboro {
+	background: gainsboro;
+}
 
 /* ------- FIN BG COLOR ------- */
 
@@ -176,14 +179,16 @@ tbody tr:hover {background-color: #ddd;}
 }
 
 .btn-roll {
-	cursor:pointer;
-	border:none;
+	cursor: pointer;
+	border: none;
 	text-decoration: none;
-	padding: 5px 10px;
-	border-radius: 5px;
+	margin: 0px -20px 0px 10px;
+	border-radius: 10px;
 	box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
 	transition: border-radius 0.25s, background 0.5s;
 	width: fit-content;
+	width: 30px;
+  	height: 30px;
 }
 
 .btn-roll:active {
@@ -583,6 +588,7 @@ div.card {
 	justify-content: space-around;
 	align-items: center;
 	margin-right: 10px;
+	height: 35px;
 }
 
 .pip-a-card span {

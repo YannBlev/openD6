@@ -10,8 +10,8 @@
 		        <button class="btn-roll dark"><i class="fa-solid fa-dice"></i></button>
 	        </div>
 	    </div>
-	    <div class="skills-a-card" th:each="s : ${a.skills}">
-	        <div class="skill-a-card">
+	    <div class="skills-a-card" th:each="s, iterStat : ${a.skills}">
+	        <div th:classappend="${iterStat.index % 2 == 1} ? ' gainsboro'" class="skill-a-card">
 	        	<div class="name-s-a-card">
 	        		<span th:each="skill : ${skills}" th:if="${skill.id == s.skillId}" th:text="${skill.name}"></span>
 	            </div>
