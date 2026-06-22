@@ -14,13 +14,14 @@ public class ServicePersonaliseAuthentification implements UserDetailsService {
     private MemberService memberService;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) 
+            throws UsernameNotFoundException {
 
-        Member member = memberService.getMembers()
-                .stream()
-                .filter(m -> m.getPseudo().equals(username))
-                .findFirst()
-                .orElseThrow(() -> new UsernameNotFoundException("Utilisateur introuvable"));
+        Member member = memberService.getMemberByPseudo(username);
+
+        if (member == null) {
+            throw new UsernameNotFoundException("Utilisateur introuvable");
+        }
 
         return new UtilisateurSpringSecurity(member);
     }

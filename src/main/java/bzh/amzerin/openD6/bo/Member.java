@@ -2,8 +2,6 @@ package bzh.amzerin.openD6.bo;
 
 import lombok.*;
 
-import java.util.Objects;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

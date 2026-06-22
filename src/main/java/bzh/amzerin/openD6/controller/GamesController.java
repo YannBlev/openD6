@@ -144,10 +144,8 @@ public class GamesController {
 	        @PathVariable("id") int id,
 	        @RequestParam("username") String username,
 	        RedirectAttributes redirectAttributes) {
-		System.out.println("****************************" + username + "********************************");
 		
 		Member player = memberService.getMemberByPseudo(username);
-		System.out.println("****************************" + player + "********************************");
 		
 		if (player == null) {
 			redirectAttributes.addFlashAttribute("errorMessage", "You have to enter a username");
